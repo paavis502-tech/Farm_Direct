@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://farmdirect-backend-production-abee.up.railway.app/api",,
+  baseURL: "https://farmdirect-backend-production-abee.up.railway.app/api",
   headers: { "Content-Type": "application/json" },
 });
 
