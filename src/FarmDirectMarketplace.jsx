@@ -312,6 +312,7 @@ export default function FarmDirectMarketplace() {
           addToCart={addToCart}
           products={products}
           loading={loadingProducts}
+          farmers = {farmers}
          />
         )}
       {activeTab === "home" && farmerView && <FarmerDashboard />}
@@ -346,7 +347,7 @@ export default function FarmDirectMarketplace() {
   );
 }
 
-function HomePage({ setActiveTab, addToCart, products = [], loading }) {
+function HomePage({ setActiveTab, addToCart, products = [], loading, farmers = [] }) {
   return (
     <div>
       {/* Hero */}
@@ -421,7 +422,7 @@ function HomePage({ setActiveTab, addToCart, products = [], loading }) {
       <div style={{ padding: "2rem" }}>
         <h2 style={{ fontFamily: "Georgia, serif", fontSize: 24, color: theme.green900, margin: "0 0 16px" }}>Featured farmers</h2>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: 12 }}>
-          {FARMERS.map((f) => (
+          {farmers.map((f) => (
             <div key={f.id} style={{ background: theme.white, border: `1px solid ${theme.gray200}`, borderRadius: 12, padding: "1rem", display: "flex", gap: 12, alignItems: "center", cursor: "pointer" }}>
               <div style={{ width: 44, height: 44, borderRadius: "50%", background: theme.green100, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 22, flexShrink: 0 }}>{f.emoji}</div>
               <div>
